@@ -1,8 +1,10 @@
 # DorkScraper
 Dorkscraper is a tool for Google Dork Hacking, all Google Dorks are available in the GHDB.
 Please use this tool legally the creator is not responsible for any misuse of this tool.
+Dependecies:
+selenium and the firefox selenium driver
  Usage:
- dorkscraper <dork> <output> <tld>
+ dorkscraper dork output tld
 
  Available dorks:
 
@@ -29,3 +31,9 @@ Please use this tool legally the creator is not responsible for any misuse of th
 
   -ji
   Search for juicy information.
+  
+Available outputs:
+-s Selenium web driver, firefox
+
+tld
+Tld is the top level domain or target site you wish to google dork.
