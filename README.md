@@ -8,6 +8,7 @@ The creator is not responsible for any misuse of this tool. Please use legally.
 * Selenium Firefox Webdriver
 ## Usage
 `python dorkscraper.py <dork> <output_mode> <tld>`
+Tld is **optional**
 Tld is the top level domain or target site you wish to dork. Example: .gov or walmart.com
 ## Output Modes
 * -t
