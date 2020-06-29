@@ -1,39 +1,30 @@
-# DorkScraper
-Dorkscraper is a tool for Google Dork Hacking, all Google Dorks are available in the GHDB.
-Please use this tool legally the creator is not responsible for any misuse of this tool.
-Dependecies:
-selenium and the firefox selenium driver
- Usage:
- dorkscraper dork output tld
-
- Available dorks:
-
-  -fp
-  Search for files containing passwords.
-
-  -av
-  Search for advisories and vulnerabilities.
-
-  -sd
-  Search for sensitive directories.
-
-  -ws
-  Search for web servers.
-
-  -vs
-  Search for vulnerable servers.
-
-  -lp
-  Search for login portals.
-
-  -fh
-  Search for footholds.
-
-  -ji
-  Search for juicy information.
-  
-Available outputs:
--s Selenium web driver, firefox
-
-tld
-Tld is the top level domain or target site you wish to google dork.
+# DorkScraper v 0.2
+## Description
+Dorkscraper is a tool for **Google Dork Hacking.** All Google dorks in this tool can be found in the **GHDB**.
+The creator is not responsible for any misuse of this tool. Please use legally.
+## Dependecies
+* Python 3
+* Selenium
+* Selenium Firefox Webdriver
+## Usage
+`python dorkscraper.py <dork> <output_mode> <tld>`
+Tld is the top level domain or target site you wish to dork. Example: .gov or walmart.com
+## Output Modes
+* -t
+  This will print all of the information, in an unclean format.
+  URLS and Descriptions. 
+* -c
+  This will format the scraped information cleanly.
+  The URLS will be output in this format: url.com > route > file > ext
+  The > mean / or . Here the unformatted url would be:  url.com/route/file.ext
+## Available Dorks
+* -fp for password files.
+* -av for advisories and vulnerabilities.
+* -ws for web servers.
+* -vs for vulnerable servers
+* -lp for login portals
+* -fh for footholds.
+* -vo for various online devices.
+* -cam for online cameras.
+* -ji for juicy information.
+* -si for sensitive shopping info.
