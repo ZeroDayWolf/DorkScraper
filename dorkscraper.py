@@ -1,14 +1,15 @@
 from selenium import webdriver
 import re
 import sys
+#Start selenium
+browser = webdriver.Firefox()
+
 tld=''
 if(len(sys.argv) > 3):
     tld=' site:'+str(sys.argv[3])
 #This function is for Google Dorking, or any Google Query with Selenium
 def googleSearch(queries, output_mode,tld):
     result=[]
-    #Start selenium
-    browser = webdriver.Firefox()
     #Run queries.
     if(output_mode == "-t"):
         for query in queries:
@@ -89,3 +90,4 @@ def googleDork(args):
     #Turn them into strings for parsing.
     #Return results.
 googleDork(sys.argv)
+browser.quit()
