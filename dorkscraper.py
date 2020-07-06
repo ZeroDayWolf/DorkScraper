@@ -5,6 +5,8 @@ import sys
 browser = webdriver.Firefox()
 
 tld=''
+outputToFile = False
+#If tld is included.
 if(len(sys.argv) > 3):
     tld=' site:'+str(sys.argv[3])
 #This function is for Google Dorking, or any Google Query with Selenium
@@ -14,6 +16,8 @@ def googleSearch(queries, output_mode,tld):
     if(output_mode == "-t"):
         for query in queries:
             print("Running query: "+query + tld)
+            time.sleep(5)
+            print("Waiting to avoid bot detection...")
             browser.get("https://www.google.com/search?q="+query+ tld)
             found_url_divs=browser.find_elements_by_class_name("r")
             found_description_divs=browser.find_elements_by_class_name("s")
@@ -26,12 +30,26 @@ def googleSearch(queries, output_mode,tld):
     elif(output_mode == "-c"):
         for query in queries:
             print("Running query: " + query + tld)
+            time.sleep(5)
+            print("Waiting to avoid bot detection...")
             browser.get("https://google.com/search?q="+query + tld)
             found_divs=browser.find_elements_by_class_name("rc")
             for div in found_divs:
                 result.append(div.text)
+    elif(output_mode == "-f"):
+        for query in queries:
+            print("Running query: " + query + tld)
+            time.sleep(5)
+            print("Waiting to avoid bot detection...")
+            browser.get("https://google.com/search?q="+query + tld)
+            found_divs=browser.find_elements_by_class_name("rc")
+            for div in found_divs:
+                result.append(div.text)
+            f = open("results.txt", "w")
+            f.write("".join(results))
+            f.close()
     else:
-        print("Not a valid output mode. Output modes are -c and -t.")
+        print("Not a valid output mode. Output modes are -c, -t, and -f.")
     print("".join(result))
 def googleDork(args):
     if(args[1] == "-fp"):
@@ -79,6 +97,7 @@ def googleDork(args):
         print("-si for sensitive shopping info. <dork>")
         print("Output Modes")
         print("-t will output total information, in an unclean format. URLS and descriptions. <output_mode>")
+        print("-f will ouput information in a clean format to a file. <output_mode>")
         print("<output_mode> -c will output some information in a clean format, the URLS will be formated something like this:")
         print("url.com > route > file >etc > ext >PDF")
         print("The > means / or . : url.com/route/file/etc/ext.pdf")
