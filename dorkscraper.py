@@ -47,7 +47,7 @@ def googleSearch(queries, output_mode,tld):
             for div in found_divs:
                 result.append(div.text)
             f = open("results.txt", "w")
-            f.write("".join(results))
+            f.write("".join(result))
             f.close()
     else:
         print("Not a valid output mode. Output modes are -c, -t, and -f.")
