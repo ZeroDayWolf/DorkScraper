@@ -1,5 +1,6 @@
 from selenium import webdriver
 import re
+import time
 import sys
 #Start selenium
 browser = webdriver.Firefox()
