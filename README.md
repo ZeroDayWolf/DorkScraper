@@ -11,6 +11,8 @@ The creator is not responsible for any misuse of this tool. Please use legally.
 Tld is **optional**
 Tld is the top level domain or target site you wish to dork. Example: .gov or walmart.com
 ## Output Modes
+* -f 
+  This will put all data into a file in a clean format.
 * -t
   This will print all of the information, in an unclean format.
   URLS and Descriptions. 
