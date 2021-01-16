@@ -46,7 +46,7 @@ def googleSearch(queries, output_mode,tld):
             found_divs=browser.find_elements_by_class_name("rc")
             for div in found_divs:
                 result.append(div.text)
-            f = open("results.txt", "w")
+            f = open("results.txt", "w", encoding='utf-8')
             f.write("".join(result))
             f.close()
     else:
